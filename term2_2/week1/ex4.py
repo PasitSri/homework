@@ -4,10 +4,12 @@ def duplicate_el(arr):
             return -1
     n = len(arr)
     duplicate_num = []
+    arr.sort()
     for i in range(n-1):
-        j = i+1
-        for j in range(i+1, n+1):
-            if(arr[i] == arr[j] and not (arr[i] in duplicate_num)):
+        if(i>0 and arr[i] == arr[i-1]):
+          continue
+        for j in range(i+1, n):
+            if(arr[i] == arr[j]):
                 duplicate_num.append(arr[i])
                 break
     return duplicate_num
