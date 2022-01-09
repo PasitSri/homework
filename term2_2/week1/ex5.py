@@ -1,3 +1,10 @@
+def sort(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if arr[i] < arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+    return arr
+
 def tree_sum(arr):
     for i in arr:
         if(not(isinstance(i, int))):
@@ -5,7 +12,7 @@ def tree_sum(arr):
     n = len(arr)
     i = 0
     result = []
-    arr.sort()
+    arr = sort(arr)
     while(i<n):
         if(i != 0 and arr[i] == arr[i-1]):
             i += 1
@@ -26,6 +33,5 @@ def tree_sum(arr):
     return result
 
 
-print(tree_sum([0, -1, 2, -3, 1, -2]))
-    
-
+# print(tree_sum([0, -1, 2, -3, 1, -2]))
+print(sort([0, -1, 2, -3, 1, -2]))

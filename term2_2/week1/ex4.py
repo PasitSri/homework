@@ -1,10 +1,17 @@
+def sort(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if arr[i] < arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+    return arr
+
 def duplicate_el(arr):
     for i in arr:
         if(not(isinstance(i, int))):
             return -1
     n = len(arr)
     duplicate_num = []
-    arr.sort()
+    arr = sort(arr)
     for i in range(n-1):
         if(i>0 and arr[i] == arr[i-1]):
           continue
